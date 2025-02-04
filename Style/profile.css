@@ -1,0 +1,132 @@
+/* General Styles */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f7f7f7; 
+    margin: 0;
+    padding: 0;
+    color: #333;
+}
+
+/* Profile Container */
+.profile-container {
+   
+    width: 100%;
+    max-width: 800px;
+    margin: 50px auto;
+    background-color: #fff; 
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+}
+
+
+.profile-header {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+/* Profile Information - Row Layout */
+.profile-info {
+    display: flex;
+    flex-direction: column;
+    gap: 20px; /* Adds spacing between rows */
+}
+
+.profile-row {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    width: 100%;
+}
+
+.profile-item {
+    flex: 1;
+}
+
+.profile-item h3 {
+    font-size: 16px;
+    color: #333;
+    margin-bottom: 8px;
+}
+
+.profile-item p {
+    font-size: 18px;
+    color: #555;
+    font-weight: 300;
+}
+
+/* Edit Profile Button */
+.edit-btn-container {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.edit-profile-btn {
+    background-color: #4caf50;
+    color: white;
+    font-size: 18px;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    display: inline-block; 
+    text-decoration: none;
+}
+
+.edit-profile-btn:hover {
+    background-color: #45a049;
+    transform: scale(1.05);
+}
+
+.edit-profile-btn:active {
+    background-color: #388e3c;
+}
+
+/* Profile Picture Container */
+.profile-pic-container {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+/* Profile Picture Styling */
+.profile-pic {
+    width: 160px;
+    height: 160px;
+    border-radius: 50%; /* Circular profile picture */
+    object-fit: cover; /* Ensures the image fills the circle */
+    border: 4px solid #4caf50; /* Green border around the image */
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.2); /* Soft shadow */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.profile-pic:hover {
+    transform: scale(1.05); /* Slight zoom effect */
+    box-shadow: 0 0 12px rgba(0, 0, 0, 0.3); /* Stronger shadow effect on hover */
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+    .profile-row {
+        flex-direction: column; /* Stack items vertically on mobile */
+    }
+
+    .profile-item {
+        flex: unset; /* Allow items to take full width on small screens */
+    }
+
+    .edit-profile-btn {
+        width: 100%; /* Make the edit button full width on mobile */
+    }
+
+    /* Profile Picture */
+    .profile-pic {
+        width: 120px; /* Adjust profile picture size for smaller screens */
+        height: 120px;
+    }
+
+    /* Center profile info on mobile */
+    .profile-info {
+        align-items: center;
+    }
+}

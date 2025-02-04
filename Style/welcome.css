@@ -1,77 +1,105 @@
-/* style.css */
-
-body {
-    font-family: 'Arial', sans-serif;
-    background: url('https://images.unsplash.com/photo-1506748686214-e9df14d4d9d0?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwzNjUyOXwwfDF8c2VhcmNofDF8fGJhY2tncm91bmR8ZW58MHx8fHwxNjYyMjY1NzY0&ixlib=rb-1.2.1&q=80&w=1080') no-repeat center center fixed;
-    background-size: cover;
-    margin: 0;
-    padding: 0;
-    color: #fff;
-}
-
-header {
-    background-color: rgba(92, 184, 92, 0.8);
-    color: white;
-    padding: 20px;
-    text-align: center;
-    position: relative;
-}
-
-header nav ul {
-    list-style-type: none;
-    padding: 0;
-}
-
-header nav ul li {
-    display: inline;
-    margin: 0 15px;
-}
-
-header nav ul li a {
-    color: white;
+.split-section {
+    display: flex;
+    padding: 65px;
+    justify-content: space-between;
+    align-items: center;
+    height: auto;
+  }
+  
+  body{
+    background-color: #fffefe;
+  }
+  .left-side {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-right: 20px;
+  }
+  
+  .left-side a{
     text-decoration: none;
-}
-
-header nav ul li a:hover {
-    text-decoration: underline;
-}
-
-main {
+    color: white;
+  
+  }
+  
+  .left-side button:hover{
+      background-color: #E5873B; /* Button hover color */
+  }    
+  
+  
+  .main-heading {
+    font-size: 36px;
+    font-weight: bold;
+    line-height: 1.2;
+    color: black;
+  }
+  
+  .orange-text {
+    color: orange;
+  }
+  
+  .subtext {
+    font-size: 16px;
+    color: #333;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    line-height: 1.6;
+  }
+  
+  .feature-button {
+    border-radius: 50px;
+    background-color: #B6C370;
+    color: white;
+    font-weight: bold;
+    width: 150px;
+    border: none;
+    padding: 10px 20px;
+    margin: 0;
+    cursor: pointer;
+  }
+  
+  .right-side {
+    flex: 1;
     display: flex;
     justify-content: center;
-    align-items: center;
-    padding: 20px;
-    min-height: calc(100vh - 120px); /* Adjust for header and footer height */
+  }
+  
+  .right-side img {
+    max-width: 100%;
+    height: auto;
+    filter: brightness(1) contrast(1.5);
+  }
+
+  .quote-rectangle {
+    background: linear-gradient(135deg, #788899, #2c3e50); 
+    padding: 20px; /* Space around the text */
+    margin: 20px 0; /* Space above and below */
+    display: flex; /* Use flexbox for centering */
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+    margin-bottom: 100px;
 }
 
-.journey {
-    background: rgba(255, 255, 255, 0.9);
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
-    width: 600px;
+.quote-text {
+    font-style: italic; /* Italic text */
+    text-align: center; /* Center text */
+    color: #f1ecec; /* Dark text color */
+    font-size: 18px; /* Font size */
+    max-width: 600px; /* Limit the max width of the text */
+    line-height: 1.5; /* Space between lines */
 }
 
-.journey h2 {
-    text-align: center;
-    color: #333;
+@media (max-width: 768px) {
+    .quote-rectangle {
+        padding: 15px; /* Reduced padding for mobile */
+        margin: 15px 0; /* Adjusted margin for mobile */
+    }
+
+    .quote-text {
+        font-size: 16px; /* Slightly smaller font size for mobile */
+        max-width: 90%; /* Use more width on smaller screens */
+    }
 }
 
-.journey ul {
-    list-style-type: disc;
-    padding-left: 20px;
-}
-
-footer {
-    background-color: rgba(92, 184, 92, 0.8);
-    color: white;
-    text-align: center;
-    padding: 10px;
-    position: relative;
-    bottom: 0;
-    width: 100%;
-}
-
-footer p {
-    margin: 0;
-}
+  

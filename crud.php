@@ -22,7 +22,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             VALUES ('$name', '$phone', '$email', '$location', '$class', '$time', '$preferred_gender', '$tuition_fee')";
 
     if ($conn->query($sql) === TRUE) {
-        echo "<p style='color:green;'>Tuition post created successfully!</p>";
+        // Tuition post created successfully!
     } else {
         echo "<p style='color:red;'>Error: " . $sql . "<br>" . $conn->error . "</p>";
     }
@@ -33,7 +33,7 @@ if (isset($_GET['delete'])) {
     $id = $_GET['delete'];
     $sql = "DELETE FROM tuition_posts WHERE id=$id";
     if ($conn->query($sql) === TRUE) {
-        echo "<p style='color:green;'>Tuition post deleted successfully!</p>";
+        // Tuition post deleted successfully!
     } else {
         echo "<p style='color:red;'>Error deleting post: " . $conn->error . "</p>";
     }
@@ -50,7 +50,7 @@ $result = $conn->query($sql);
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CRUD Operations</title>
-    <link rel="stylesheet" href="style/crud.css">
+    <link rel="stylesheet" href="Style/crud.css">
     <script>
         function toggleForm() {
             var form = document.getElementById("tuitionForm");
@@ -59,16 +59,8 @@ $result = $conn->query($sql);
     </script>
 </head>
 <body>
-    <header>
-        <h1>Tuition Posts</h1>
-        <nav>
-            <ul>
-                <li><a href="welcome.php">Home</a></li>
-                <li><a href="crud.php">CRUD Operations</a></li>
-                <li><a href="logout.php">Logout</a></li>
-            </ul>
-        </nav>
-    </header>
+    <?php include 'Template/header.php'; ?> <!-- Include the header file -->
+    
 
     <main>
         <section class="crud-form">
@@ -76,10 +68,13 @@ $result = $conn->query($sql);
             <button onclick="toggleForm()">Toggle Tuition Form</button>
             <div id="tuitionForm" style="display:none;">
                 <form method="POST" action="">
+                    <!-- First Row of Inputs (4 inputs) -->
                     <input type="text" name="name" placeholder="Name" required>
                     <input type="text" name="phone" placeholder="Phone Number" required>
                     <input type="email" name="email" placeholder="Email" required>
                     <input type="text" name="location" placeholder="Location" required>
+
+                    <!-- Second Row of Inputs (4 inputs) -->
                     <input type="text" name="class" placeholder="Class" required>
                     <input type="text" name="time" placeholder="Time" required>
                     <select name="preferred_gender" required>
@@ -89,53 +84,43 @@ $result = $conn->query($sql);
                         <option value="Any">Any</option>
                     </select>
                     <input type="number" name="tuition_fee" placeholder="Tuition Fee" required>
+
                     <button type="submit">Post Tuition</button>
                 </form>
             </div>
         </section>
 
+
         <section class="tuition-posts">
             <h2>Existing Tuition Posts</h2>
-            <table>
-                <tr>
-                    <th>Name</th>
-                    <th>Phone</th>
-                    <th>Email</th>
-                    <th>Location</th>
-                    <th>Class</th>
- <th>Time</th>
-                    <th>Preferred Gender</th>
-                    <th>Tuition Fee</th>
-                    <th>Actions</th>
-                </tr>
+            <div class="card-container">
                 <?php
                 if ($result->num_rows > 0) {
                     while ($row = $result->fetch_assoc()) {
-                        echo "<tr>
-                                <td>{$row['name']}</td>
-                                <td>{$row['phone']}</td>
-                                <td>{$row['email']}</td>
-                                <td>{$row['location']}</td>
-                                <td>{$row['class']}</td>
-                                <td>{$row['time']}</td>
-                                <td>{$row['preferred_gender']}</td>
-                                <td>{$row['tuition_fee']}</td>
-                                <td>
-                                    <a href='edit.php?id={$row['id']}' class='edit-button'>Edit</a>
+                        echo "<div class='card'>
+                                <h3>{$row['name']}</h3>
+                                <p><strong>Phone:</strong> {$row['phone']}</p>
+                                <p><strong>Email:</strong> {$row['email']}</p>
+                                <p><strong>Location:</strong> {$row['location']}</p>
+                                <p><strong>Class:</strong> {$row['class']}</p>
+                                <p><strong>Time:</strong> {$row['time']}</p>
+                                <p><strong>Preferred Gender:</strong> {$row['preferred_gender']}</p>
+                                <p><strong>Tuition Fee:</strong> {$row['tuition_fee']}</p>
+                                <div class='actions'>
+                                    <a href='crudedit.php?id={$row['id']}' class='edit-button'>Edit</a>
                                     <a href='crud.php?delete={$row['id']}' class='delete-button' onclick='return confirm(\"Are you sure you want to delete this post?\");'>Delete</a>
-                                </td>
-                              </tr>";
+                                </div>
+                              </div>";
                     }
                 } else {
-                    echo "<tr><td colspan='9'>No tuition posts available.</td></tr>";
+                    echo "<p>No tuition posts available.</p>";
                 }
                 ?>
-            </table>
+            </div>
         </section>
     </main>
 
-    <footer>
-        <p>&copy; 2023 Tuition Management System</p>
-    </footer>
+    <?php include 'Template/footer.php'; ?>
+    
 </body>
 </html>

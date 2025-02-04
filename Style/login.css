@@ -9,6 +9,9 @@ body {
     height: 100vh;
     margin: 0;
 }
+.login-container{
+    text-align: center;
+}
 
 form {
     background: white;

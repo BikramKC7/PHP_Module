@@ -1,3 +1,4 @@
+/* General Styles */
 body {
     font-family: Arial, sans-serif;
     margin: 0;
@@ -5,6 +6,7 @@ body {
     background-color: #f4f4f4;
 }
 
+/* Header Styles */
 header {
     background: #35424a;
     color: #ffffff;
@@ -12,9 +14,11 @@ header {
     text-align: center;
 }
 
+/* Navbar Styles */
 nav ul {
     list-style: none;
     padding: 0;
+    text-align: center;
 }
 
 nav ul li {
@@ -27,49 +31,145 @@ nav ul li a {
     text-decoration: none;
 }
 
+/* Section Styles */
 h1, h2 {
     margin: 0;
 }
 
-.crud-form, .tuition-posts {
+/* Form Section */
+.crud-form {
     margin: 20px;
     padding: 20px;
     background: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    max-width: 1300px;
+    margin: 20px auto;
+    margin-bottom: 50px;
+}
+
+.crud-form h2 {
+    text-align: center;
+    color: #35424a;
+}
+
+
+.crud-form form {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+.tuition-posts h2{
+    margin-left: 95px;
+}
+/* Each input in a row */
+.crud-form form input,
+.crud-form form select {
+    width: 23%;  /* Set width to 23% to fit 4 items in a row */
+    margin-bottom: 15px;
+    padding: 12px;
+    font-size: 16px;
+    border: 1px solid #ddd;
     border-radius: 5px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
-table {
-    width: 100%;
-    border-collapse: collapse;
+.crud-form form input:focus,
+.crud-form form select:focus {
+    border-color: #35424a;
+    outline: none;
 }
 
-table th, table td {
-    border: 1px solid #dddddd;
-    text-align: left;
-    padding: 8px;
-}
-
-table th {
+/* Full width button */
+.crud-form form button {
+    width: 100%;  /* Full width for the submit button */
     background-color: #35424a;
     color: white;
+    cursor: pointer;
+    font-size: 18px;
+    padding: 12px;
+    transition: background-color 0.3s ease;
 }
 
-.edit-button, .delete-button {
-    padding: 5px 10px;
-    color: white;
-    text-decoration: none;
-    border-radius: 3px;
+.crud-form form button:hover {
+    background-color: #5cb85c;
 }
 
-.edit-button {
+/* Toggle Button */
+button {
     background-color: #5bc0de;
+    color: white;
+    padding: 10px;
+    margin-bottom: 15px;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
 }
 
-.delete-button {
-    background-color: #d9534f;
+button:hover {
+    background-color: #17a2b8;
 }
 
-.edit-button:hover, .delete-button:hover {
-    opacity: 0.8;
+button:focus {
+    outline: none;
+}
+
+/* Hidden Form Section */
+#tuitionForm {
+    display: none;
+}
+
+.card-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px; /* Space between cards */
+    padding: 20px;
+    margin-left: 70px;
+}
+
+.card {
+    background: #f9f9f9;
+    border: 1px solid #ddd;
+    padding: 20px;
+    width: calc(33.333% - 20px); /* 3 cards per row */
+    box-sizing: border-box;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.card h3 {
+    margin-top: 0;
+    color: #333;
+}
+
+.card p {
+    margin: 10px 0;
+    color: #555;
+}
+
+.card .actions {
+    margin-top: 10px;
+}
+
+.card .edit-button,
+.card .delete-button {
+    padding: 5px 10px;
+    margin-right: 10px;
+    text-decoration: none;
+    color: white;
+    border-radius: 5px;
+    background-color: #007bff;
+}
+
+.card .delete-button {
+    background-color: #dc3545;
+}
+
+.card .edit-button:hover {
+    background-color: #0056b3;
+}
+
+.card .delete-button:hover {
+    background-color: #c82333;
 }

@@ -1,0 +1,98 @@
+/* Footer Section */
+footer {
+    width: 100%;
+    background-color: #333;
+    color: white;
+    padding: 20px 0;
+    position: relative;
+    bottom: 0;
+}
+
+/* Container for footer sections */
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap; /* Allow sections to wrap on smaller screens */
+    padding: 0 15px;
+}
+
+/* Footer sections */
+.footer-section {
+    width: 30%;
+    margin-bottom: 20px;
+    /* margin-left: 50px; */
+}
+
+.footer-section h3 {
+    font-size: 18px;
+    margin-bottom: 10px;
+    margin-left: 50px;
+}
+
+.footer-section p {
+    font-size: 14px;
+    line-height: 1.6;
+    margin-left: 50px;
+}
+
+.footer-section ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-section ul li {
+    margin-bottom: 8px;
+}
+
+.footer-section ul li a {
+    text-decoration: none;
+    color: #fff;
+    transition: color 0.3s ease;
+}
+
+.footer-section ul li a:hover {
+    color: #5cb85c;
+}
+
+.social-media {
+    list-style: none;
+    padding: 0;
+}
+
+.social-media li {
+    display: inline;
+    margin-right: 10px;
+}
+
+.social-media li a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 18px;
+    transition: color 0.3s ease;
+}
+
+.social-media li a:hover {
+    color: #5cb85c;
+}
+
+/* Footer bottom */
+.footer-bottom {
+    text-align: center;
+    padding-top: 20px;
+    font-size: 14px;
+}
+
+.footer-bottom p {
+    margin: 0;
+}
+
+/* Ensure footer is at the bottom */
+body, html {
+    height: 100%;
+    margin: 0;
+}
+
+.main-content {
+    min-height: 100vh;
+    padding-bottom: 80px; /* Adjust based on your footer height */
+}

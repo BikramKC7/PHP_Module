@@ -13,45 +13,40 @@ if (!isset($_SESSION['username'])) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Welcome</title>
     <link rel="stylesheet" href="style/welcome.css">
+    
+
 </head>
 <body>
-    <header>
-        <h1>Welcome to My Learning Journey</h1>
-        <nav>
-            <ul>
-                <li><a href="welcome.php">Home</a></li>
-                <li><a href="login.php">Logout</a></li>
-                <li><a href="crud.php">Crud</a></li>
-
-            </ul>
-        </nav>
-    </header>
+    <?php include 'Template/header.php'; ?> <!-- Include the header file -->
 
     <main>
-        <section class="journey">
-            <h2>My PHP and CSS Learning Journey</h2>
-            <p>
-                Welcome to my personal journey of learning PHP and CSS! 
-                I started this journey to enhance my web development skills and create dynamic, interactive websites.
-            </p>
-            <p>
-                Throughout my learning process, I have explored various concepts, including:
-            </p>
-            <ul>
-                <li>Understanding the basics of PHP syntax and structure.</li>
-                <li>Working with forms and user input.</li>
-                <li>Connecting to databases using MySQL.</li>
-                <li>Implementing user authentication and sessions.</li>
-                <li>Styling web pages using CSS for a better user experience.</li>
-            </ul>
-            <p>
-                I am excited to continue this journey and build more complex applications in the future!
-            </p>
+            <!-- Hero landing Section -->
+        <section class="split-section">
+            <div class="left-side">
+                <h1 class="main-heading">
+                    <span class="orange-text">Ghar-Tution</span><br>
+                    <span>Each Student Needs </span><br>
+                    <span>Quality Education & Special Attention</span>
+                </h1>
+                <p class="subtext">
+               We Proved provides personalized learning, one-on-one attention, and a comfortable study environment, helping students improve their academic performance and build confidence. It ensures flexible learning schedules and tailored teaching methods to suit individual learning needs.</p>
+                <button class="feature-button"><a href="welcome.php">Ghar-Tuition</a></button>
+            </div>
+            <div class="right-side">
+                <img src="uploads/tuition.jpg" alt="Inspiring Image" />
+                
+            </div>
         </section>
+
+        <!-- Quote Rectangle -->
+        <div class="quote-rectangle">
+            <p class="quote-text">
+                "You don’t have to struggle with learning alone. You just need the right guidance to unlock your potential." - Ghar-Tution
+            </p>
+        </div>
+
     </main>
 
-    <footer>
-        <p>&copy; <?php echo date("Y"); ?> My Learning Journey. All rights reserved.</p>
-    </footer>
+    <?php include 'Template/footer.php'; ?> <!-- Include the footer file -->
 </body>
 </html>
